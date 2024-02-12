@@ -4,19 +4,16 @@ body {
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    background-color: #0e0e26; /* Added background color to fill entire page */
     color: #555572; /* Default text color */
     margin: 0 auto;
-  }
-  
-  body {
-    background-image: url('background_graphics.svg');
-    background-size: cover; /* Cover the entire background */
+    background-color: #0e0e26; /* Added background color to fill entire page */
+    background-image: url('background_graphics_png.png');
+    background-size: 100% auto; /* Adjust the background size to fit the viewport width */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Fix the background image so it doesn't scroll with the content */
+    background-repeat: no-repeat; /* Do not repeat the background image */
     z-index: -1; /* Place the image behind other content */
-  }
-
+}
   /* Styling navigation bar */
 header {
   max-width: 950px;
@@ -79,19 +76,31 @@ header {
   }
 
 
-  /* Hero section styles */
   .hero {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
     color: white;
     padding: 128px 0;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 128px;
   }
   
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%; /* Set maximum width */
+    width: 100%; /* Occupy full width of the container */
+  }
+
   .hero-title {
     font-family: 'Inter', sans-serif;
-    font-size: 80px;
+    font-size: calc(20px + 2vw); /* Adjust base size and scaling factor as needed */
     margin-bottom: 20px;
     line-height: 16px;
+    width: 100%;
   }
   
   .hero-text {
@@ -166,46 +175,43 @@ header {
   color: #555572;
   padding: 60px 0;
   text-align: center;
-  
 }
 
 .we-work-with-container {
   display: flex;
-  justify-content: space-between; /* Ensures equal space between items */
-  flex-direction: row;
+  flex-wrap: row; /* Allow items to wrap onto the next line */
+  justify-content: center; /* Center items horizontally */
   gap: 20px; /* Adjust the space between items as needed */
-  margin-left: auto; /* Centers the container horizontally */
-  margin-right: auto; /* Centers the container horizontally */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; /* Set maximum width for the container */
 }
 
 .company {
-  width: calc(25% - 20px); /* 25% width for each container with 20px margin */
-  background-image:   
-  radial-gradient(ellipse 100px 100px at 50% 70px, rgba(84, 181, 211, 0.1) 40%, rgba(0, 255, 0, 0) 120%),
-  radial-gradient(at top left, #2b2b3f, #121230);
+  flex: 1 1 auto; /* Flex grow, shrink, basis */
+  min-width: 200px; /* Set minimum width for better responsiveness */
+  background-image: radial-gradient(ellipse 100px 100px at 50% 70px, rgba(84, 181, 211, 0.1) 40%, rgba(0, 255, 0, 0) 120%),
+                    radial-gradient(at top left, #2b2b3f, #121230);
   padding: 20px;
   border-radius: 16px;
 }
-  
-  .company h3 {
-    color: #ffffff;
-    line-height: 30px;
-    letter-spacing: 2px;
-  }
-  
-  .company p {
-    color: #B4B4D4;
-    line-height: 26px;
-  }
 
-  .company img {
-    align-items: center;
-    max-width: 64px;
-    max-height: 64px;
-    min-width: 64px;
-    min-height:64px;
-    border-radius: 200px;
-  }
+.company h3 {
+  color: #ffffff;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+.company p {
+  color: #B4B4D4;
+  line-height: 26px;
+}
+
+.company img {
+  max-width: 100%; /* Make images responsive */
+  height: auto;
+  border-radius: 50%; /* Adjust border-radius to make images circular */
+}
 
 
   /* Portfolio section styles */
@@ -221,7 +227,8 @@ header {
     justify-content: space-between; /* Distribute items along the main axis with space between them */
     align-items: center; /* Align items vertically center */
     gap: 30px;
-    width: calc(100% + 60px); /* Adjust 60px according to your gap between items */
+    
+    overflow-x: auto; 
     /* REMOVE LINE ABOVE "width: calc(100% + 60px);" AND ADD THIS TO HAVE A SCROLL:overflow-x: auto; */
     max-width: 100%; /* Adjust the maximum width as needed */
   }
@@ -239,6 +246,10 @@ header {
   .portfolio-item p {
  margin-bottom: 8px;
  margin-top: 8px;
+  }
+
+  .hidden {
+    display: none;
   }
 
  /* Scrollbar styling */
@@ -268,67 +279,67 @@ header {
 
 /* Packages section styles */
 .packages {
-    color: #555572;
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .packages-container {
-    display: flex;
-    justify-content: space-between; /* Ensures equal space between items */
-    flex-direction: row; /* Changed from wrap to row */
-    margin: 0 auto; /* Center the packages horizontally */
-    width: 100%;
-    gap: 20px; /* Adjust the space between items as needed */
-  }
-  
-  .package {
-    display: flex;
-    flex-direction: column;
-    width: calc(25% - 20px); /* 25% width for each container with 20px margin */
-    height: auto;
-    position: relative;
-    background-image: radial-gradient(at top left, #2b2b3f, #121230); /* Add your gradient colors */
-    padding: 20px;
-    border-radius: 16px;
+  color: #555572;
+  padding: 60px 0;
+  text-align: center;
 }
-    
-    .package h3 {
-      color: #ffffff;
-      line-height: 30px;
-      letter-spacing: 2px;
-      min-height:60px;
-    }
-    
-    .package p {
-      color: #B4B4D4;
-      line-height: 26px;
-      min-height: 150px;
-    }
-  
-    .package img {
-    max-width: 100%;
-      align-items: center;
-    }
 
-    .button-regular {
-        max-width: 100%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 12px 25px;
-        background-color: #5454d4;
-        color: white;
-        border-radius: 32px;
-        font-size: 14px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        white-space: normal;
-    }
-    
-    .button-regular:hover {
-        background-color: #7a7afc;
-    }
+.packages-container {
+  display: flex;
+  flex-wrap: row; /* Allow items to wrap onto the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Adjust the space between items as needed */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; /* Set maximum width for the container */
+}
+
+.package {
+  flex: 1 1 auto; /* Flex grow, shrink, basis */
+  min-width: 200px; /* Set minimum width for better responsiveness */
+  height: auto;
+  background-image: radial-gradient(at top left, #2b2b3f, #121230); /* Add your gradient colors */
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.package h3 {
+  color: #ffffff;
+  line-height: 30px;
+  letter-spacing: 2px;
+  min-height: 60px;
+}
+
+.package p {
+  color: #B4B4D4;
+  line-height: 26px;
+  max-height: 150px; /* Set maximum height to prevent overflow */
+  overflow: hidden; /* Hide overflowing text */
+  word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+}
+
+.package img {
+  max-width: 100%; /* Make images responsive */
+  height: auto;
+  align-items: center;
+}
+
+.button-regular {
+  max-width: 100%;
+  height: auto;
+  padding: 12px 25px;
+  background-color: #5454d4;
+  color: white;
+  border-radius: 32px;
+  font-size: 14px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.button-regular:hover {
+  background-color: #7a7afc;
+}
     
 /* Enquire section styles */
 .enquire {
@@ -404,13 +415,116 @@ footer {
 
   /* Responsivness */
   @media screen and (max-width: 768px) {
-    .packages {
+
+    header {
+      padding-left:16px;
+      padding-right:16px;
+    }
+    .menu-items {
+      display: none; /* Hide UL elements when screen width is 768px or less */
+    }
+
+    .hero {
+      position: relative; /* Set position relative for the container */
+      display: flex;
+      flex-direction: column;
+      color: white;
+      padding: 128px 0;
+      text-align: center; /* Center align content horizontally */
       justify-content: center;
+      align-items: center;
+      margin-bottom: 128px;
     }
     
-    .package {
-      width: calc(50% - 20px); /* Two items per row, considering margins */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 80%; /* Set maximum width */
+      width: 100%; /* Occupy full width of the container */
+    }
+    
+    .hero-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 16px;
+      width: 100%;
+      min-width: 360px;
+      white-space: nowrap;
+    }
+  
+    .hero-text {
+      color: #555572;
+      padding-top: 40px;
+      line-height: 26px;
+      min-width: 360px;
     }
 
+    .about-section-text
+    {
+      text-align: justify;
+      line-height: 26px;
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 32px;
+      color: white;
+    }
+    
+    .portfolio-items {
+      display: flex;
+      flex-direction: row; /* Arrange items horizontally */
+      justify-content: space-between; /* Distribute items along the main axis with space between them */
+      align-items: center; /* Align items vertically center */
+      gap: 30px;
+      min-width: 300px;
+      overflow-x: auto; 
+      max-width: 100%; /* Adjust the maximum width as needed */
+    }
+
+    .packages-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Center items vertically */
+      text-align: center; /* Center the content horizontally */
+    }
+
+    .packages {
+      margin: 0 auto; /* Center the section horizontally */
+    }
+
+    .package {
+      width: 100%;
+    }
+
+    .package p {
+      color: #B4B4D4;
+      line-height: 26px;
+      min-height: 100px;
+    }
+
+    .we-work-with-container {
+      flex-direction: column; /* Change direction to row to keep items on one row */
+      align-items: center; /* Center items horizontally */
+    }
+    
+    .company {
+      width: calc(100% - 20px); /* Adjust width for even smaller screens */
+    }
+
+    .package {
+      width: calc(100% - 20px); /* Adjust width for smaller screens */
+    }
+
+    .button-regular {
+      margin-bottom: 50px;
   }
 
+  body {
+    background-size: 300% auto;
+    background-position: -360px -100px; /* Adjusts the position by 10px from the left and 20px from the top */
+}
+}
