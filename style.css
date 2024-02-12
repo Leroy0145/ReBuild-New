@@ -1,0 +1,416 @@
+/* Global styles */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    background-color: #0e0e26; /* Added background color to fill entire page */
+    color: #555572; /* Default text color */
+    margin: 0 auto;
+  }
+  
+  body {
+    background-image: url('background_graphics.svg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fix the background image so it doesn't scroll with the content */
+    z-index: -1; /* Place the image behind other content */
+  }
+
+  /* Styling navigation bar */
+header {
+  max-width: 950px;
+  min-height: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+.burger-menu {
+    width: 32px; /* Set the width of the icon */
+    height: 32px; /* Set the height of the icon */
+    cursor: pointer;
+    background-image: url('burger-menu.svg'); /* Default icon */
+    background-size: cover; /* Ensure the icon fills the container */
+    transition: background-image 0.3s ease; /* Smooth transition */
+  }
+  
+  .burger-menu:hover {
+    background-image: url('burger-menu-purple.svg'); /* Icon on hover */
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 80px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .logo {
+    color: white;
+  }
+  
+  header ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+  }
+  
+  header ul li {
+    margin-right: 30px;
+  }
+  
+  header ul li a {
+    text-decoration: none;
+    color: #555572;
+  }
+  
+  header ul li a:hover {
+    transition-duration: 0.4s;
+    color: #ffffff;
+  }
+
+
+  /* Hero section styles */
+  .hero {
+    color: white;
+    padding: 128px 0;
+    text-align: center;
+    margin-bottom: 128px;
+  }
+  
+  .hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    margin-bottom: 20px;
+    line-height: 16px;
+  }
+  
+  .hero-text {
+    color: #555572;
+    padding-top: 40px;
+    line-height: 26px;
+  }
+  
+  .hero-button {
+    margin-top: 30px;
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #5454D4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 12px 80px 8px rgba(91, 91, 255, 0.445);
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Transition property for background-color and box-shadow */
+  }
+  
+  .hero-button:hover {
+    background-color: #7a7afc; /* New background color on hover */
+    box-shadow: 0 12px 80px 10px rgba(91, 91, 255, 0.762);
+  }
+
+  .button-tertiary {
+    color:#5454D4;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    }
+    
+ .button-tertiary:hover {
+  color:#ffffff;
+   cursor: pointer;
+    }
+  
+
+  /* About section styles */
+  .about {
+    color: #555572;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: white;
+  }
+  
+  .about-section-text
+  {
+    text-align: justify;
+    line-height: 26px;
+    font-size: 18px;
+  }
+
+  .section-text {
+    font-size: 18px;
+    text-align: center;
+    line-height: 26px;
+    margin-bottom: 48px;
+  }
+  
+  .highlight-text {
+    color: white;
+  }
+
+/* We Work With section styles */
+.we-work-with {
+  color: #555572;
+  padding: 60px 0;
+  text-align: center;
+  
+}
+
+.we-work-with-container {
+  display: flex;
+  justify-content: space-between; /* Ensures equal space between items */
+  flex-direction: row;
+  gap: 20px; /* Adjust the space between items as needed */
+  margin-left: auto; /* Centers the container horizontally */
+  margin-right: auto; /* Centers the container horizontally */
+}
+
+.company {
+  width: calc(25% - 20px); /* 25% width for each container with 20px margin */
+  background-image:   
+  radial-gradient(ellipse 100px 100px at 50% 70px, rgba(84, 181, 211, 0.1) 40%, rgba(0, 255, 0, 0) 120%),
+  radial-gradient(at top left, #2b2b3f, #121230);
+  padding: 20px;
+  border-radius: 16px;
+}
+  
+  .company h3 {
+    color: #ffffff;
+    line-height: 30px;
+    letter-spacing: 2px;
+  }
+  
+  .company p {
+    color: #B4B4D4;
+    line-height: 26px;
+  }
+
+  .company img {
+    align-items: center;
+    max-width: 64px;
+    max-height: 64px;
+    min-width: 64px;
+    min-height:64px;
+    border-radius: 200px;
+  }
+
+
+  /* Portfolio section styles */
+.portfolio {
+    color: #555572;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .portfolio-items {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between; /* Distribute items along the main axis with space between them */
+    align-items: center; /* Align items vertically center */
+    gap: 30px;
+    width: calc(100% + 60px); /* Adjust 60px according to your gap between items */
+    /* REMOVE LINE ABOVE "width: calc(100% + 60px);" AND ADD THIS TO HAVE A SCROLL:overflow-x: auto; */
+    max-width: 100%; /* Adjust the maximum width as needed */
+  }
+
+  .portfolio-item {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-item h3 {
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .portfolio-item p {
+ margin-bottom: 8px;
+ margin-top: 8px;
+  }
+
+ /* Scrollbar styling */
+ /* Hide scrollbar */
+.portfolio-items::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  /* Optional: Show scrollbar on hover */
+  .portfolio-items:hover::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width as needed */
+  }
+  
+  /* Handle */
+  .portfolio-items::-webkit-scrollbar-thumb {
+    background: #282549; /* Color of scrollbar handle */
+    border-radius: 16px; /* Adjust scrollbar handle border radius */
+    height: 8px;
+  }
+  
+  /* Handle on hover */
+  .portfolio-items::-webkit-scrollbar-thumb:hover {
+    background: #433e7a; /* Color of scrollbar handle on hover */
+  }
+ 
+
+
+/* Packages section styles */
+.packages {
+    color: #555572;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .packages-container {
+    display: flex;
+    justify-content: space-between; /* Ensures equal space between items */
+    flex-direction: row; /* Changed from wrap to row */
+    margin: 0 auto; /* Center the packages horizontally */
+    width: 100%;
+    gap: 20px; /* Adjust the space between items as needed */
+  }
+  
+  .package {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 20px); /* 25% width for each container with 20px margin */
+    height: auto;
+    position: relative;
+    background-image: radial-gradient(at top left, #2b2b3f, #121230); /* Add your gradient colors */
+    padding: 20px;
+    border-radius: 16px;
+}
+    
+    .package h3 {
+      color: #ffffff;
+      line-height: 30px;
+      letter-spacing: 2px;
+      min-height:60px;
+    }
+    
+    .package p {
+      color: #B4B4D4;
+      line-height: 26px;
+      min-height: 150px;
+    }
+  
+    .package img {
+    max-width: 100%;
+      align-items: center;
+    }
+
+    .button-regular {
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 25px;
+        background-color: #5454d4;
+        color: white;
+        border-radius: 32px;
+        font-size: 14px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        white-space: normal;
+    }
+    
+    .button-regular:hover {
+        background-color: #7a7afc;
+    }
+    
+/* Enquire section styles */
+.enquire {
+  background-color: rgba(120, 120, 120, 0.05);
+  color: white;
+  padding: 64px 0;
+  text-align: center;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .contact-methods p {
+    margin: 0 20px;
+    display: flex; /* Add flex display */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .contact-methods img {
+    margin-right: 10px; /* Adjust icon's spacing with text */
+  }
+
+/* Footer styles */
+footer {
+    position: relative;
+    margin-top: 64px;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .social-icons-container {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Align items horizontally at the center */
+    align-items: center; /* Align items vertically at the center */
+    padding: 0; /* Remove default padding */
+    margin-bottom: 30px;
+  }
+  
+  .social-icons-container li {
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+
+  .terms  {
+    margin: 16px;
+  }
+
+  .copyright {
+    color: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+  }
+
+  .bottom-image {
+    position: absolute; /* Change from absolute to fixed */
+    width:100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    text-align: center;
+  }
+  
+  .bottom-image img {
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    height: auto;
+  }
+
+
+  /* Responsivness */
+  @media screen and (max-width: 768px) {
+    .packages {
+      justify-content: center;
+    }
+    
+    .package {
+      width: calc(50% - 20px); /* Two items per row, considering margins */
+    }
+
+  }
+
