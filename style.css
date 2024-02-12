@@ -429,13 +429,14 @@ footer {
       display: flex;
       flex-direction: column;
       color: white;
-      padding: 128px 0;
       text-align: center; /* Center align content horizontally */
       justify-content: center;
       align-items: center;
-      margin-bottom: 128px;
+      margin-top: 0px;
+      margin-bottom: 32px;
+      padding: 32px 0;
     }
-    
+
     .hero-content {
       display: flex;
       flex-direction: column;
@@ -456,7 +457,7 @@ footer {
   
     .hero-text {
       color: #555572;
-      padding-top: 40px;
+      padding-top: 0px;
       line-height: 26px;
       min-width: 360px;
     }
@@ -509,6 +510,7 @@ footer {
     .we-work-with-container {
       flex-direction: column; /* Change direction to row to keep items on one row */
       align-items: center; /* Center items horizontally */
+      padding: 0px;
     }
     
     .company {
@@ -524,7 +526,7 @@ footer {
   }
 
   body {
-    background-size: 300% auto;
+    background-size: 280% auto;
     background-position: -360px -100px; /* Adjusts the position by 10px from the left and 20px from the top */
 }
 }
