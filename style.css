@@ -10,10 +10,52 @@ body {
     background-image: url('background_graphics_png.png');
     background-size: 100% auto; /* Adjust the background size to fit the viewport width */
     background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Fix the background image so it doesn't scroll with the content */
     background-repeat: no-repeat; /* Do not repeat the background image */
     z-index: -1; /* Place the image behind other content */
 }
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling behavior for the entire page */
+}
+
+  /* Styling POPUP */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 50%;
+  height: 70%;
+}
+
+.popup-content {
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  width: 80%;
+  height: 80%;
+}
+
+.popup-content img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+}
+
   /* Styling navigation bar */
 header {
   max-width: 950px;
@@ -97,7 +139,7 @@ header {
 
   .hero-title {
     font-family: 'Inter', sans-serif;
-    font-size: calc(20px + 2vw); /* Adjust base size and scaling factor as needed */
+    font-size: calc(32px + 2vw); /* Adjust base size and scaling factor as needed */
     margin-bottom: 20px;
     line-height: 16px;
     width: 100%;
@@ -107,6 +149,7 @@ header {
     color: #555572;
     padding-top: 40px;
     line-height: 26px;
+    font-size: 16px;
   }
   
   .hero-button {
@@ -167,8 +210,9 @@ header {
   }
   
   .highlight-text {
-    color: white;
-  }
+    color: rgb(124, 118, 153);
+    font-style: italic; /* Add italic style to the text */
+}
 
 /* We Work With section styles */
 .we-work-with {
@@ -248,6 +292,11 @@ header {
  margin-top: 8px;
   }
 
+  .portfolio-item img {
+    max-height: 280px;
+    border-radius: 16px;
+  }
+
   .hidden {
     display: none;
   }
@@ -301,6 +350,9 @@ header {
   background-image: radial-gradient(at top left, #2b2b3f, #121230); /* Add your gradient colors */
   padding: 20px;
   border-radius: 16px;
+  display: flex; /* Added */
+  flex-direction: column; /* Added */
+  align-items: center; /* Align items horizontally */
 }
 
 .package h3 {
@@ -308,6 +360,7 @@ header {
   line-height: 30px;
   letter-spacing: 2px;
   min-height: 60px;
+  margin-bottom:0px;
 }
 
 .package p {
@@ -333,6 +386,8 @@ header {
   border-radius: 32px;
   font-size: 14px;
   transition-duration: 0.4s;
+  margin-bottom: 20px;
+  margin-top: 10px;
   cursor: pointer;
   white-space: normal;
 }
