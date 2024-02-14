@@ -27,29 +27,37 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);
-  width: 50%;
-  height: 70%;
+  width: 800px;
+  height: 800px;
+  border-radius: 16px;
 }
 
 .popup-content {
   position: relative;
   margin: auto;
   margin-top: 40px;
-  width: 80%;
-  height: 80%;
+  width: 100%; /* Set width to 100% to fill the container */
+  height: 90%; /* Set height to 100% to fill the container */
+  line-height: 1.6;
+  color: white;
+  max-width: 600px;
 }
 
 .popup-content img {
-  max-width: 100%;
-  max-height: 100%;
+  margin-top: 40px;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  margin: auto;
+  object-fit: contain; /* Adjusts the image to fit its container while preserving aspect ratio */
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 40px;
   cursor: pointer;
   color: #fff;
   font-size: 24px;
@@ -68,6 +76,7 @@ header {
 }
   
 .burger-menu {
+  display: none; /* Hide UL elements by default */
     width: 32px; /* Set the width of the icon */
     height: 32px; /* Set the height of the icon */
     cursor: pointer;
@@ -472,12 +481,34 @@ footer {
   @media screen and (max-width: 768px) {
 
     header {
-      padding-left:16px;
-      padding-right:16px;
+      padding-left: 16px;
+      padding-right: 16px;
     }
-    .menu-items {
-      display: none; /* Hide UL elements when screen width is 768px or less */
-    }
+    
+   /* Hide the menu items by default */
+.menu-items ul {
+  display: none;
+}
+
+/* Show the menu items when the 'show' class is added */
+.menu-items ul.show {
+  display: block;
+  text-align: right; /* Align the menu items to the right */
+}
+
+/* Adjust styles for menu items */
+.menu-items ul li {
+  display: inline-block; /* Display items horizontally */
+  margin: 0;
+  padding: 10px;
+  border-bottom: 0px solid #ccc;
+}
+
+/* Display the hamburger menu icon */
+.burger-menu {
+  display: block; /* Make sure the hamburger menu icon is visible */
+  cursor: pointer;
+}
 
     .hero {
       position: relative; /* Set position relative for the container */
