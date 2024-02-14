@@ -483,32 +483,39 @@ footer {
     header {
       padding-left: 16px;
       padding-right: 16px;
+      position: relative; /* Ensure the header is positioned relatively */
     }
     
-   /* Hide the menu items by default */
-.menu-items ul {
-  display: none;
-}
+    .menu-items ul {
+      display: none;
+    }
 
-/* Show the menu items when the 'show' class is added */
-.menu-items ul.show {
-  display: block;
-  text-align: right; /* Align the menu items to the right */
-}
-
-/* Adjust styles for menu items */
-.menu-items ul li {
-  display: inline-block; /* Display items horizontally */
-  margin: 0;
-  padding: 10px;
-  border-bottom: 0px solid #ccc;
-}
-
-/* Display the hamburger menu icon */
-.burger-menu {
-  display: block; /* Make sure the hamburger menu icon is visible */
-  cursor: pointer;
-}
+    /* Show the menu items when the 'show' class is added */
+    .menu-items ul.show {
+      display: block;
+      position: absolute; /* Position the menu absolutely */
+      top: calc(100% + 10px); /* Position the menu below the hamburger menu with a small gap */
+      right: 0; /* Align the menu items to the right */
+      background-color: rgba(0, 0, 0, 0.8); /* Dark background with 50% opacity */
+      padding: 20px 20px;
+      margin-top: 0px;
+      width: auto; /* Make the menu width auto to fit the content */
+      z-index: 1000; /* Ensure the menu appears over other elements */
+      border-radius: 8px 0px 0px 8px;
+    }
+    
+    /* Adjust styles for menu items */
+    .menu-items ul li {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 0px solid #ccc;
+    }
+    
+    /* Display the hamburger menu icon */
+    .burger-menu {
+      display: block; /* Make sure the hamburger menu icon is visible */
+      cursor: pointer;
+    }
 
     .hero {
       position: relative; /* Set position relative for the container */
@@ -614,5 +621,51 @@ footer {
   body {
     background-size: 280% auto;
     background-position: -360px -100px; /* Adjusts the position by 10px from the left and 20px from the top */
+}
+
+/* styling popup for mobile */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 350px;
+  height: 700px;
+  border-radius: 16px;
+}
+
+.popup-content {
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  width: 80%; /* Set width to 100% to fill the container */
+  height: 90%; /* Set height to 100% to fill the container */
+  line-height: 1.6;
+  color: white;
+  max-width: 600px;
+}
+
+.popup-content img {
+  margin-top: 20px;
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  object-fit: contain; /* Adjusts the image to fit its container while preserving aspect ratio */
+}
+
+.close-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
 }
 }
