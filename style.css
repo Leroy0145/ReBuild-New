@@ -18,6 +18,43 @@ html {
   scroll-behavior: smooth; /* Enable smooth scrolling behavior for the entire page */
 }
 
+/* Stars blinking on a background */
+#stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 100%;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff4b;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0; /* Set initial opacity to 0 */
+}
+
+.star.animate {
+  animation: blink 5s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 0;
+  }
+  30% {
+      opacity: 0;
+  }
+  60% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
   /* Styling POPUP */
 
 .popup-container {
